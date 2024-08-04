@@ -60,8 +60,8 @@ To run the software, go to the root directory of the project and type `sudo ./cs
   * Health  
 - Aimbot (Hold the X key)  
 
-![Screenshot of ESP](https://r2.e-z.host/bb3dfc85-7f7f-4dcb-8b0b-3a4af0aa57e4/e3091q4iv1scf6hhvs.png)
-![Screenshot of menu](https://i.imgur.com/DD3y3oj.png)
+![Screenshot of ESP](https://r2.e-z.host/bb3dfc85-7f7f-4dcb-8b0b-3a4af0aa57e4/7lrpr154rns0r6r6f5.png)
+![Screenshot of menu](https://r2.e-z.host/bb3dfc85-7f7f-4dcb-8b0b-3a4af0aa57e4/6sotxvotu5oqyrw7jc.png)
 
 # Is this finished?
 No, it is very incomplete, and will change a lot over time. The program is inefficient, and will most likely change over time.
