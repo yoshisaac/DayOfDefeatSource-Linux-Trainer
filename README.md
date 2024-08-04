@@ -1,6 +1,6 @@
 # What is this?
 This is a program intended to automate tasks such as movement, and display information to us that wasn't originally intended to be shown. In a nutshell, this is a video game hack/cheat.  
-It was forked from my Counter Strike: Source cheat, and will hopefully have feature parody while both update.  
+It was forked from my [Counter Strike: Source cheat](https://github.com/yoshisaac/CounterStrikeSource-Linux-Trainer), and will hopefully have feature parody while both update.  
 
 # How does it work?
 It externally (as a seperate program from the video game) reads and writes memory using system calls that the Linux kernel graciously gives us. Those system calls include functions like `processes_vm_readv()` and `process_vm_writev()`. 
