@@ -48,9 +48,9 @@ $ make
 ```
 
 # How to use
-After compilation, there will be a program created in the root directory of the project called `cs-source-hack`.
+After compilation, there will be a program created in the root directory of the project called `dods-source-hack`.
 
-To run the software, go to the root directory of the project and type `sudo ./cs-source-hack` in your terminal. What this does is it runs the software as `root`, which is required for reading and writing memory on an external level.  
+To run the software, go to the root directory of the project and type `sudo ./dods-source-hack` in your terminal. What this does is it runs the software as `root`, which is required for reading and writing memory on an external level.  
 
 # Features
 - Player ESP  

@@ -22,6 +22,7 @@ namespace playerOffset { //all are the same as CS:S... how convenient...
   inline uintptr_t height = 0x1C0;
   inline uintptr_t dormant = 0x16E;
   inline uintptr_t boneMatrixPtr = 0x810;
+  inline uintptr_t aimPunch = 0xE28;
 };
 
 class Player {
@@ -38,7 +39,8 @@ public:
   int dormant_frames;
   short dormant_alpha;
   float boneMatrix[48][3];
-
+  float aimPunch[3];
+  
   Player() {
     this->index = -1;
     this->health = 0;
@@ -54,13 +56,18 @@ public:
     this->dormant = true;
     this->boneMatrix;
     this->dormant_frames = 0;
+    this->aimPunch[0] = 0;
+    this->aimPunch[1] = 0;
+    this->aimPunch[2] = 0;
+    
   }
   
   Player(int index, int health, std::string name,
 	 float viewAngles[2], float absLocation[3],
 	 int team, bool isDead, float height,
 	 bool dormant, float boneMatrix[48][3],
-	 int dormant_frames, short dormant_alpha) {
+	 int dormant_frames, short dormant_alpha,
+	 float aimPunch[3]) {
 
     this->index = index;
     this->health = health;
@@ -81,6 +88,9 @@ public:
 
     this->dormant_frames = dormant_frames;
     this->dormant_alpha = dormant_alpha;
+    this->aimPunch[0] = aimPunch[0];
+    this->aimPunch[1] = aimPunch[1];
+    this->aimPunch[2] = aimPunch[2];
   }
 };
 

@@ -8,9 +8,7 @@
 #include <X11/extensions/Xcomposite.h>
 #include <X11/extensions/Xdbe.h>
 
-#include "../memory.hpp"
-
-namespace ESP {
+namespace DRAW {
   inline XFontStruct* shadowfont;
   inline XFontStruct* font;
 
@@ -26,4 +24,4 @@ namespace ESP {
   inline XColor gray;
 }
 
-void esp(pid_t, XdbeBackBuffer, Display*, Window, GC);
+void draw(pid_t, XdbeBackBuffer, Display*, Window);

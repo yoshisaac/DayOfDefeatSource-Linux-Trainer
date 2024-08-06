@@ -19,24 +19,12 @@
 #include "../math.hpp"
 #include "../xutil.hpp"
 
-void esp(pid_t gamePid, XdbeBackBuffer back_buffer, Display* espDisplay, Window window) {
-  GC gc;
+void esp(pid_t gamePid, XdbeBackBuffer back_buffer, Display* espDisplay, Window window, GC gc) {
 
-
-  for (;;) {
-    
-    gc = XCreateGC(espDisplay, window, 0, 0);
     XSetBackground(espDisplay, gc, ESP::white.pixel);
-
-    db_clear(back_buffer, espDisplay, gc);
-
     
-    if (getPidByWindow(espDisplay, getFocusedWindow(espDisplay)) != gamePid || !config->ESP) { //ESP is off/disable ESP/stop rendering
-      db_swap_buffers(espDisplay, window);
-      XFreeGC(espDisplay, gc);
-      usleep(1000*1000/300);
-      continue;
-    }
+    if (getPidByWindow(espDisplay, getFocusedWindow(espDisplay)) != gamePid || !config->ESP) //ESP is off/disable ESP/stop rendering
+      return;
 
     for(int i = 0; i < 32; ++i) {
       
@@ -268,11 +256,4 @@ void esp(pid_t gamePid, XdbeBackBuffer back_buffer, Display* espDisplay, Window 
       }
 
     }
-    
-    db_swap_buffers(espDisplay, window);
-
-    XFreeGC(espDisplay, gc);
-    
-    usleep(1000*1000/300);
-  }
 }

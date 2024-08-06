@@ -27,6 +27,7 @@
 #include "hacks/aimbot.hpp"
 #include "hacks/playerInfo.hpp"
 #include "hacks/ESP.hpp"
+#include "hacks/draw.hpp"
 #include "client/client.hpp"
 #include "engine/engine.hpp"
 #include "GUI/GUI.hpp"
@@ -206,7 +207,7 @@ int main() {
   Display* d = XOpenDisplay(NULL);
   Display* bhopDisplay = XOpenDisplay(NULL);
   Display* aimDisplay = XOpenDisplay(NULL);
-  Display* espDisplay = XOpenDisplay(NULL);
+  Display* drawDisplay = XOpenDisplay(NULL);
 
   if (!d) {
     printf("Please run startx/xinit\nIf you are running this program from SSH, it won't work.\n");
@@ -300,8 +301,8 @@ int main() {
   pthread_setname_np(aimbotThread.native_handle(), "aimbotThread");
 
   //esp thread
-  std::thread espThread(esp, gamePid, back_buffer, espDisplay, window);
-  pthread_setname_np(espThread.native_handle(), "espThread");
+  std::thread drawThread(draw, gamePid, back_buffer, drawDisplay, window);
+  pthread_setname_np(drawThread.native_handle(), "drawThread");
   
   printf("Ready\n");
   printf("The Free and Open Source no-name GNU DOD:S cheat, made with GNU Emacs, for your GNU operating system.\n");
